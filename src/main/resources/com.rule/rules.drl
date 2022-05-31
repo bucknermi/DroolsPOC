@@ -1,0 +1,57 @@
+package com.rule
+import com.model.Salary
+import com.service.SalaryService
+import com.model.Employee
+
+global 	SalaryService SalaryService
+
+rule "Sales Employee"
+	when 
+		salaryObject: Salary(type=="sales")
+		employeeObj: Employee()
+	then
+	  if(employeeObj.getEmployeeLevel()==1){
+	salaryObject.setSalaryAmount(30000);	
+	  }
+	   if(employeeObj.getEmployeeLevel()==2){
+	salaryObject.setSalaryAmount(60000);	
+	  }
+	   if(employeeObj.getEmployeeLevel()==3){
+	salaryObject.setSalaryAmount(90000);	
+	  }
+			
+	end
+	
+rule "Business Employee"
+	when 
+		salaryObject: Salary(type=="business")
+		employeeObj: Employee()
+	then
+	  if(employeeObj.getEmployeeLevel()==1){
+	salaryObject.setSalaryAmount(40000);	
+	  }
+	   if(employeeObj.getEmployeeLevel()==2){
+	salaryObject.setSalaryAmount(80000);	
+	  }
+	   if(employeeObj.getEmployeeLevel()==3){
+	salaryObject.setSalaryAmount(120000);	
+	  }
+	end
+	
+rule "Accounting Employee"
+	when 
+		salaryObject: Salary(type=="accounting")
+		employeeObj: Employee()
+	then
+	  if(employeeObj.getEmployeeLevel()==1){
+	salaryObject.setSalaryAmount(50000);	
+	  }
+	   if(employeeObj.getEmployeeLevel()==2){
+	salaryObject.setSalaryAmount(100000);	
+	  }
+	   if(employeeObj.getEmployeeLevel()==3){
+	salaryObject.setSalaryAmount(150000);	
+	  }
+			
+	end
+	
