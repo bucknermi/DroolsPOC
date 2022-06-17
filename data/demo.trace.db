@@ -1,0 +1,21 @@
+2022-06-17 16:11:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "COUNTRIES" not found; SQL statement:
+INSERT INTO countries (id, name) VALUES (1, 'USA') [42102-197]
+2022-06-17 16:18:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PERSON" not found; SQL statement:
+INSERT INTO Person (PersonID, LastName, FirstName, City) VALUES (1, "Buckner", "Michael", "Corn Field") [42102-197]
+2022-06-17 16:22:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PERSONS" already exists; SQL statement:
+CREATE TABLE Persons ( PersonID int, LastName varchar(255), FirstName varchar(255), City varchar(255) ) [42101-197]
+2022-06-17 16:23:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PERSON" not found; SQL statement:
+INSERT INTO Person (PersonID, LastName, FirstName, City) VALUES (1, "Buckner", "Michael", "Corn Field") [42102-197]
+2022-06-17 16:26:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "COUNTRIES" not found; SQL statement:
+INSERT INTO countries (id, name) VALUES (1, 'USA') [42102-197]
+2022-06-17 16:28:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "COUNTRIES" not found; SQL statement:
+INSERT INTO countries (id, name) VALUES (1, 'USA') [42102-197]
+2022-06-17 16:30:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "COUNTRIES" not found; SQL statement:
+INSERT INTO countries (id, name) VALUES (1, 'USA') [42102-197]

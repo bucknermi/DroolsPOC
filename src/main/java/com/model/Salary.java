@@ -8,14 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product")
+@Table(name = "salary")
 public class Salary implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
-	private Long id;
+	private int id;
 
 	private String type;
 	private int salaryAmount;
@@ -36,11 +36,11 @@ public class Salary implements Serializable {
 		this.salaryAmount = salaryAmount;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
