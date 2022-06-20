@@ -5,53 +5,134 @@ import com.model.Employee
 
 global 	SalaryService SalaryService
 
-rule "Sales Employee"
+rule "New Employee"
 	when 
-		salaryObject: Salary(type=="sales")
-		employeeObj: Employee()
+	  salaryObject: Salary(type=="new")
+	  employeeObj: Employee()
 	then
-	  if(employeeObj.getEmployeeLevel()==1){
-	salaryObject.setSalaryAmount(30000);	
-	  }
-	   if(employeeObj.getEmployeeLevel()==2){
-	salaryObject.setSalaryAmount(60000);	
-	  }
-	   if(employeeObj.getEmployeeLevel()==3){
-	salaryObject.setSalaryAmount(90000);	
-	  }
+	
+	  if(employeeObj.getSkill()=="java")
+		{
+	  	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(50000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(60000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(70000);	
+	  		}}
+	  		
+	  if(employeeObj.getSkill()=="python") 
+	  	{
+	 	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(55000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(65000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(75000);	
+	  		}}
+	  		
+	   if(employeeObj.getSkill()=="javascript") 
+	  	 {
+	 	 if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(60000);	
+	  		}
+	  	 if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(70000);	
+	  		}
+	   	 if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(80000);	
+	  		}}
 			
 	end
 	
-rule "Business Employee"
+rule "Experienced Employee"
 	when 
-		salaryObject: Salary(type=="business")
-		employeeObj: Employee()
-	then
-	  if(employeeObj.getEmployeeLevel()==1){
-	salaryObject.setSalaryAmount(40000);	
-	  }
-	   if(employeeObj.getEmployeeLevel()==2){
-	salaryObject.setSalaryAmount(80000);	
-	  }
-	   if(employeeObj.getEmployeeLevel()==3){
-	salaryObject.setSalaryAmount(120000);	
-	  }
+	  salaryObject: Salary(type=="experienced")
+	  employeeObj: Employee()
+		
+		then
+	  if(employeeObj.getSkill()=="java")
+		{
+	  	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(80000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(90000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(100000);	
+	  		}}
+	  		
+	  if(employeeObj.getSkill()=="python") 
+	  	{
+	 	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(85000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(95000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(105000);	
+	  		}}
+	  		
+	   if(employeeObj.getSkill()=="javascript") 
+	  	{
+	 	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(90000);	
+	  		}
+	  	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(100000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(110000);	
+	  		}}
 	end
 	
-rule "Accounting Employee"
+rule "Senior Employee"
 	when 
-		salaryObject: Salary(type=="accounting")
+		salaryObject: Salary(type=="senior")
 		employeeObj: Employee()
-	then
-	  if(employeeObj.getEmployeeLevel()==1){
-	salaryObject.setSalaryAmount(50000);	
-	  }
-	   if(employeeObj.getEmployeeLevel()==2){
-	salaryObject.setSalaryAmount(100000);	
-	  }
-	   if(employeeObj.getEmployeeLevel()==3){
-	salaryObject.setSalaryAmount(150000);	
-	  }
+then
+	
+	  if(employeeObj.getSkill()=="java")
+		{
+	  	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(100000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(110000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(120000);	
+	  		}}
+	  		
+	  if(employeeObj.getSkill()=="python") 
+	  	{
+	 	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(105000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(115000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(125000);	
+	  		}}
+	  		
+	   if(employeeObj.getSkill()=="javascript") 
+	  	{
+	 	if(employeeObj.getEmployeeLevel()==1){
+			salaryObject.setSalaryAmount(110000);	
+	  		}
+	  	if(employeeObj.getEmployeeLevel()==2){
+			salaryObject.setSalaryAmount(120000);	
+	  		}
+	   	if(employeeObj.getEmployeeLevel()==3){
+			salaryObject.setSalaryAmount(130000);	
+	  		}}
 			
 	end
 	

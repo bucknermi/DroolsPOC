@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.model.Employee;
 import com.model.Salary;
+import com.repo.SalaryRepo;
 import com.service.SalaryService;
 
 @RestController
@@ -17,15 +18,19 @@ public class SalaryController {
 	public SalaryController(SalaryService salaryService) {
 		this.salaryService = salaryService;
 	}
+	
+	@Autowired
+	SalaryRepo salaryRepo;
 
 	@GetMapping("/getSalaryAmount/{type}/employeeLevel/{employeeLevel}")
 	public Salary getQuestions(@PathVariable("type") String type,@PathVariable("employeeLevel") int employeeLevel) {
 		
-		Salary product = new Salary();
-		product.setType(type);
+		Salary salary = new Salary();
+		salary.setType(type);
 		Employee employee=new Employee();
 		employee.setEmployeeLevel(employeeLevel);
-		salaryService.getProductDiscount(product,employee);
-		return product;
+		salaryService.getEmployeeSalary(salary,employee);
+		salaryRepo.save(salary);
+		return salary;
 	}
 }

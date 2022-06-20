@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product")
+@Table(name = "salary")
 public class Salary implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -16,7 +16,6 @@ public class Salary implements Serializable {
 	@GeneratedValue
 	@Column(name = "id")
 	private Long id;
-
 	private String type;
 	private int salaryAmount;
 
@@ -43,5 +42,12 @@ public class Salary implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "Salary [id=" + id + ", salaryAmount=" + salaryAmount + "]";
+	}
+	
+	
 
 }
